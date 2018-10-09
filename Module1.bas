@@ -227,6 +227,8 @@ Public Sub getAzmetData(dataArray)
         vals = Split(dataItem, ",")
         t = DateSerial(vals(0), 1, vals(1))
         v = vals(2)
+        v = ((v * 0.001) / 0.0254)
+        v = Round(v, 2)
         On Error Resume Next
         findString = t
         Set findResult = ActiveSheet.Range("A8:A9999").Find(What:=findString, LookIn:=xlValues, _
@@ -253,6 +255,8 @@ Public Sub getAzmetDataR(dataArray)
         vals = Split(dataItem, ",")
         t = DateSerial(vals(0), 1, vals(1))
         v = vals(2)
+        v = ((v * 0.001) / 0.0254)
+        v = Round(v, 2)
         On Error Resume Next
         findString = t
         Set findResult = ActiveSheet.Range("A8:A9999").Find(What:=findString, LookIn:=xlValues, _
